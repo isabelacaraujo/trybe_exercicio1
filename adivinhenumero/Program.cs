@@ -13,7 +13,7 @@ class Program
 
         do
         {
-            Console.Write("\nDigite seu número: ");
+            Console.Write("\nDigite seu palpite: ");
             int palpite;
             while (!int.TryParse(Console.ReadLine(), out palpite))
             {
@@ -28,6 +28,26 @@ class Program
                 Console.WriteLine($"\nParabéns! Você acertou em {tentativas} tentativas!");
                 break;
             }
+
+            int diferenca = Math.Abs(palpite - numeroSecreto);
+string proximidade;
+
+if (diferenca > 100)
+{
+    proximidade = "muito distante";
+}
+else if (diferenca > 50) // Só entra aqui se for <= 100
+{
+    proximidade = "distante";
+}
+else // Só entra aqui se for <= 50
+{
+    proximidade = "perto";
+}
+
+            Console.WriteLine(palpite < numeroSecreto 
+                ? $"O número é MAIOR - ({proximidade})" 
+                : $"O número é MENOR - ({proximidade})");
 
         } while (true);
     }
