@@ -7,6 +7,7 @@ class Program
         string palavra = "trybe";
         char[] letrasDescobertas = new string('_', palavra.Length).ToCharArray();
         string letrasTentadas = "";
+        int tentativas = 0; // Variável nova para contar tentativas
 
         Console.WriteLine("=== JOGO DA FORCA ===");
 
@@ -23,6 +24,7 @@ class Program
                 continue;
             }
 
+            tentativas++; // Incrementa a contagem a cada tentativa válida
             letrasTentadas += tentativa;
 
             if (palavra.Contains(tentativa))
@@ -42,6 +44,7 @@ class Program
             }
         }
 
-        Console.WriteLine("\nParabéns! Você acertou a palavra: " + palavra);
+        // Mensagem final atualizada com o número de tentativas
+        Console.WriteLine($"\nParabéns! Você acertou a palavra '{palavra}' em {tentativas} tentativas.");
     }
 }
