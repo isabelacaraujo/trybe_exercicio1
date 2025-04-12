@@ -7,7 +7,7 @@ class Program
         string palavra = "trybe";
         char[] letrasDescobertas = new string('_', palavra.Length).ToCharArray();
         string letrasTentadas = "";
-        
+
         Console.WriteLine("=== JOGO DA FORCA ===");
 
         while (new string(letrasDescobertas) != palavra)
@@ -41,5 +41,7 @@ class Program
                 Console.WriteLine("Essa letra não tem!");
             }
         }
+
+        Console.WriteLine("\nParabéns! Você acertou a palavra: " + palavra);
     }
 }
