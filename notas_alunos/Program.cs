@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;  
+using System.Collections.Generic;
 
 class Program
 {
     static void Main()
     {
-        Dictionary<string, double> alunos = new Dictionary<string, double>()
-        { {"Isabela", 10},
+
+        var alunos = new Dictionary<string, double>()
+        {
+            {"Isabela", 10},
             {"Cyntia", 9.9},
             {"Daniel", 9.5},
             {"Thiago", 6.5},
@@ -20,10 +22,18 @@ class Program
             {"Laura", 9.8}
         };
 
-        Console.WriteLine("Lista de alunos e notas:");
+        double totalNotas = 0;
+        int quantidadeAlunos = alunos.Count;
+
         foreach (var aluno in alunos)
         {
-            Console.WriteLine($"{aluno.Key}: {aluno.Value}");
+            totalNotas += aluno.Value; 
         }
+
+        double media = totalNotas / quantidadeAlunos;
+
+  
+        Console.WriteLine("Resultado");
+        Console.WriteLine($"Média da turma: {media.ToString("0.00")}");
     }
 }
